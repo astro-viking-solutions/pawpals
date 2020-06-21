@@ -1,0 +1,9 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$custom-typography: mat-typography-config(
+  $display-3: mat-typography-level(30px, 30px, 1000, 'Pacifico, Roboto, monospace')
+);
+
+@include mat-base-typography($custom-typography)

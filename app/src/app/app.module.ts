@@ -11,6 +11,12 @@ import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app.routing.module';
 import {RouterModule} from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -19,14 +25,20 @@ import { LoginComponent } from './login/login.component';
     NavBarComponent,
     InfoComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

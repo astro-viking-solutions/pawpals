@@ -1,6 +1,16 @@
 <app-banner></app-banner>
-<app-nav-bar></app-nav-bar>
-<div fxLayout="row">
-  <router-outlet></router-outlet>
-  <app-info></app-info>
-</div>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav (navEmitter)="sidenav.toggle()"></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill>
+    <div fxLayout="column" fxFlexFill>
+      <app-nav-bar (navToggle)="sidenav.toggle()"></app-nav-bar>
+      <main fxLayout="row" fxLayoutAlign="center" fxFlex>
+          <router-outlet></router-outlet>
+        <app-info></app-info>
+      </main>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
