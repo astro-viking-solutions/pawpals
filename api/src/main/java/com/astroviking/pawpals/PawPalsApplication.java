@@ -1,12 +1,12 @@
-package com.astroviking.petpals;
+package com.astroviking.pawpals;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PetPalsApplication {
+public class PawPalsApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(PetPalsApplication.class, args);
+    SpringApplication.run(PawPalsApplication.class, args);
   }
 }

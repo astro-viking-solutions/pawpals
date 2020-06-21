@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
-Description: PetPals.io
+Description: PawPals.io
 
 Globals:
   Function:
@@ -21,11 +21,11 @@ Resources:
   petpalsUserPool:
     Type: AWS::Cognito::UserPool
     Properties:
-      UserPoolName: PetPals
+      UserPoolName: PawPals
   petpalsUserPoolClient:
     Type: AWS::Cognito::UserPoolClient
     Properties:
       UserPoolId: !Ref petpalsUserPool
       GenerateSecret: false
-      ClientName: petpals-app
+      ClientName: PawPals-app
 

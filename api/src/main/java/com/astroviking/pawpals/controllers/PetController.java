@@ -1,7 +1,7 @@
-package com.astroviking.petpals.controllers;
+package com.astroviking.pawpals.controllers;
 
-import com.astroviking.petpals.domain.Pet;
-import com.astroviking.petpals.services.PetService;
+import com.astroviking.pawpals.domain.Pet;
+import com.astroviking.pawpals.services.PetService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

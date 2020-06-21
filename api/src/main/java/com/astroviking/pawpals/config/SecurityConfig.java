@@ -1,4 +1,4 @@
-package com.astroviking.petpals.config;
+package com.astroviking.pawpals.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

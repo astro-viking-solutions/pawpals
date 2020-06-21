@@ -1,6 +1,6 @@
-package com.astroviking.petpals.services;
+package com.astroviking.pawpals.services;
 
-import com.astroviking.petpals.repositorties.UserRepository;
+import com.astroviking.pawpals.repositorties.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

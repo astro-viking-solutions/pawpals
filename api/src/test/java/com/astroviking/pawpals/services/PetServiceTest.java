@@ -1,9 +1,8 @@
-package com.astroviking.petpals.services;
+package com.astroviking.pawpals.services;
 
-import com.astroviking.petpals.domain.Pet;
-import com.astroviking.petpals.repositorties.PetRepository;
+import com.astroviking.pawpals.domain.Pet;
+import com.astroviking.pawpals.repositorties.PetRepository;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
