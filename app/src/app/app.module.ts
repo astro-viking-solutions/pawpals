@@ -10,6 +10,7 @@ import { InfoComponent } from './info/info.component';
 import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app.routing.module';
 import {RouterModule} from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {RouterModule} from '@angular/router';
     BannerComponent,
     NavBarComponent,
     InfoComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
