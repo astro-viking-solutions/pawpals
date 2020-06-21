@@ -8,6 +8,8 @@ import { BannerComponent } from './banner/banner.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InfoComponent } from './info/info.component';
 import { HomeComponent } from './home/home.component';
+import {AppRoutingModule} from './app.routing.module';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
