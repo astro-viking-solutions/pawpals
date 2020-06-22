@@ -1,9 +1,9 @@
-package com.astroviking.petpals.controllers;
+package com.astroviking.pawpals.controllers;
 
-import com.astroviking.petpals.domain.GeoState;
-import com.astroviking.petpals.domain.PetBreed;
-import com.astroviking.petpals.repositorties.GeoStateRepository;
-import com.astroviking.petpals.repositorties.PetBreedRepository;
+import com.astroviking.pawpals.domain.GeoState;
+import com.astroviking.pawpals.domain.PetBreed;
+import com.astroviking.pawpals.repositorties.GeoStateRepository;
+import com.astroviking.pawpals.repositorties.PetBreedRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

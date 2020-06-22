@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {OAuthService, UserInfo} from 'angular-oauth2-oidc';
 import {authCodeFlowConfig} from '../auth/auth-code-flow.config';
 
@@ -13,11 +13,12 @@ export class AuthService {
     console.log('AuthService constructor');
     this.oauthService.configure(authCodeFlowConfig);
     this.oauthService.loadDiscoveryDocumentAndTryLogin().then(_ => {
-      console.log('User logged in.');
       const userInfo: UserInfo = this.oauthService.getIdentityClaims() as UserInfo;
-      this.loggedIn = true;
-      console.log('sub: ' + userInfo.sub);
-      console.log('email: ' + userInfo.email);
+      if (userInfo) {
+        this.loggedIn = true;
+        console.log('sub: ' + userInfo.sub);
+        console.log('email: ' + userInfo.email);
+      }
     });
   }
 

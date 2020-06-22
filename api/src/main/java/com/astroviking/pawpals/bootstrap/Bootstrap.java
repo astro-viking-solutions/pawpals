@@ -1,11 +1,11 @@
-package com.astroviking.petpals.bootstrap;
+package com.astroviking.pawpals.bootstrap;
 
-import com.astroviking.petpals.domain.GeoState;
-import com.astroviking.petpals.domain.Pet;
-import com.astroviking.petpals.domain.PetBreed;
-import com.astroviking.petpals.repositorties.GeoStateRepository;
-import com.astroviking.petpals.repositorties.PetBreedRepository;
-import com.astroviking.petpals.repositorties.PetRepository;
+import com.astroviking.pawpals.domain.GeoState;
+import com.astroviking.pawpals.domain.Pet;
+import com.astroviking.pawpals.domain.PetBreed;
+import com.astroviking.pawpals.repositorties.GeoStateRepository;
+import com.astroviking.pawpals.repositorties.PetBreedRepository;
+import com.astroviking.pawpals.repositorties.PetRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

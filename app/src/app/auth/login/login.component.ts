@@ -1,8 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthResponse} from '../domain/AuthResponse';
 import {ActivatedRoute} from '@angular/router';
-import {OAuthService} from 'angular-oauth2-oidc';
-import {authCodeFlowConfig} from '../auth-code-flow.config';
 import {AuthService} from '../../services/auth.service';
 
 @Component({
@@ -15,11 +12,12 @@ export class LoginComponent implements OnInit {
   constructor(private route: ActivatedRoute, private authService: AuthService) {
   }
 
-  public isLoggedIn = false;
-  public email;
-
   ngOnInit(): void {
 
+  }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
   }
 
   public performLogin() {

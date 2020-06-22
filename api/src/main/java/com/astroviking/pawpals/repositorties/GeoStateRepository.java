@@ -1,6 +1,6 @@
-package com.astroviking.petpals.repositorties;
+package com.astroviking.pawpals.repositorties;
 
-import com.astroviking.petpals.domain.GeoState;
+import com.astroviking.pawpals.domain.GeoState;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
