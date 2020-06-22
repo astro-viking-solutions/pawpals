@@ -19,6 +19,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {OAuthModule} from 'angular-oauth2-oidc';
 import {HttpClientModule} from '@angular/common/http';
+import {SearchComponent} from './search/search.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import {HttpClientModule} from '@angular/common/http';
     InfoComponent,
     HomeComponent,
     LoginComponent,
-    SidenavComponent
+    SidenavComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,10 @@ import {HttpClientModule} from '@angular/common/http';
       resourceServer: {
         allowedUrls: ['http://localhost:8080'],
         sendAccessToken: true
-      }})
+      }}),
+    HttpClientModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
