@@ -1,7 +1,7 @@
-package com.astroviking.petpals.services;
+package com.astroviking.pawpals.services;
 
-import com.astroviking.petpals.domain.Pet;
-import com.astroviking.petpals.repositorties.PetRepository;
+import com.astroviking.pawpals.domain.Pet;
+import com.astroviking.pawpals.repositorties.PetRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -10,13 +10,15 @@ import { InfoComponent } from './info/info.component';
 import { HomeComponent } from './home/home.component';
 import {AppRoutingModule} from './app.routing.module';
 import {RouterModule} from '@angular/router';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {OAuthModule} from 'angular-oauth2-oidc';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,18 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     BrowserAnimationsModule,
     FlexLayoutModule,
     RouterModule,
+    HttpClientModule,
     AppRoutingModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    OAuthModule.forRoot({
+      resourceServer: {
+        allowedUrls: ['http://localhost:8080'],
+        sendAccessToken: true
+      }})
   ],
   providers: [],
   bootstrap: [AppComponent]

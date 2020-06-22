@@ -1,4 +1,4 @@
-package com.astroviking.petpals.domain;
+package com.astroviking.pawpals.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
