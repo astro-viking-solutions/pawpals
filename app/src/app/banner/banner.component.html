@@ -1,6 +1,11 @@
-<div class="banner-title" fxLayout="row" fxLayoutAlign="center center" fxHide.xs>
-PawPals.io
-</div>
-<div class="banner-title-small" fxLayout="row" fxLayoutAlign="center center" fxHide.gt-xs style="background-color: sandybrown">
-  PawPals.io
+<div fxLayout="row" fxLayoutAlign="center center" style="background-color: sandybrown">
+  <div class="banner-title" fxHide.xs>PawPals.io</div>
+  <div class="banner-title-small" fxHide.gt-xs>PawPals.io</div>
+  <div *ngIf="authUser">
+    Logged in as: {{authUser.givenName}} {{authUser.lastName}}<br>
+    <a (click)="logout()">Logout</a>
+  </div>
+  <div *ngIf="!authUser">
+    <a (click)="login()">Login</a>
+  </div>
 </div>

@@ -2,14 +2,14 @@ import { AuthConfig } from 'angular-oauth2-oidc';
 
 export const authCodeFlowConfig: AuthConfig = {
   // Url of the Identity Provider
-  issuer: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_AMDbWpKAr',
+  issuer: 'https://cognito-idp.us-east-1.amazonaws.com/us-east-1_ntYso1Zjg',
 
   // URL of the SPA to redirect the user to after login
-  redirectUri: window.location.origin + '/auth/login',
+  redirectUri: window.location.origin,
 
   // The SPA's id. The SPA is registerd with this id at the auth-server
   // clientId: 'server.code',
-  clientId: '6rmdvqu0d8oqcv9r5ik55niihf',
+  clientId: '3ev0td5as02rmc630i9ve4lli8',
 
   // Just needed if your auth server demands a secret. In general, this
   // is a sign that the auth server is not configured with SPAs in mind

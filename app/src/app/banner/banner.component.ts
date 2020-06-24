@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../services/auth.service';
+import {AuthUser} from '../domain/auth-user';
 
 @Component({
   selector: 'app-banner',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
+  authUser: AuthUser;
+
+  constructor(private authService: AuthService) {
+    authService.authUser$.subscribe(user => {
+      this.authUser = user;
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    this.authService.login();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }
