@@ -1,12 +1,17 @@
-server:
-  port: 8081
-  servlet:
-    context-path: /resource-server
-
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8083/auth/realms/baeldung
-          jwk-set-uri: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/certs
+          issuer-uri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_ntYso1Zjg
+        registration:
+          cognito:
+            clientId: b1hm22pcckd42asev8a27gi8b
+            clientSecret: 1l2t0dk6dpltg945vpjbseddtfhtdu0l9npcrfpbq5s1qv2eq6vp
+            scope: openid
+            redirectUriTemplate: "http://localhost:8080/login/oauth2/code/cognito"
+            clientName: pawpals-api
+        provider:
+          cognito:
+            issuerUri: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_ntYso1Zjg
+            usernameAttribute: cognito:username
