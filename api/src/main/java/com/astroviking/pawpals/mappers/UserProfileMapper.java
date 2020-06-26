@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserProfileMapper {
 
-  JMapper<UserProfileDTO, UserProfile> entityToDTO =
+  private final JMapper<UserProfileDTO, UserProfile> entityToDTO =
       new JMapper<>(UserProfileDTO.class, UserProfile.class);
-  JMapper<UserProfile, UserProfileDTO> dtoToEntity =
+  private final JMapper<UserProfile, UserProfileDTO> dtoToEntity =
       new JMapper<>(UserProfile.class, UserProfileDTO.class);
 
   public UserProfileDTO mapToDTO(UserProfile entity) {
