@@ -13,11 +13,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.authorizeRequests()
-        .antMatchers("/domain/**").permitAll()
-        .anyRequest().authenticated()
-        .and()
-        .cors()
-        .and()
-        .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+        .antMatchers("/user/**").authenticated()
+        .anyRequest().permitAll();
+    http.cors();
+    http.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt);
+
+    // These two are to enable h2 locally, should remove.
+    http.csrf().disable();
+    http.headers().frameOptions().sameOrigin();
   }
 }
