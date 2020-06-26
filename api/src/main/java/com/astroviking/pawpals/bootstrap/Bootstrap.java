@@ -2,7 +2,7 @@ package com.astroviking.pawpals.bootstrap;
 
 import com.astroviking.pawpals.domain.GeoState;
 import com.astroviking.pawpals.domain.Pet;
-import com.astroviking.pawpals.domain.PetBreed;
+import com.astroviking.pawpals.domain.Breed;
 import com.astroviking.pawpals.repositorties.GeoStateRepository;
 import com.astroviking.pawpals.repositorties.PetBreedRepository;
 import com.astroviking.pawpals.repositorties.PetRepository;
@@ -46,13 +46,13 @@ public class Bootstrap implements CommandLineRunner {
   }
 
   private void loadPetBreeds() {
-    List<PetBreed> petBreedList = new ArrayList<>();
+    List<Breed> breedList = new ArrayList<>();
 
-    petBreedList.add(new PetBreed("Boxer"));
-    petBreedList.add(new PetBreed("Welsh Corgi"));
-    petBreedList.add(new PetBreed("Irish Wolfhound"));
+    breedList.add(new Breed("Boxer"));
+    breedList.add(new Breed("Welsh Corgi"));
+    breedList.add(new Breed("Irish Wolfhound"));
 
-    petBreedRepository.saveAll(petBreedList);
+    petBreedRepository.saveAll(breedList);
 
     log.info("Loaded {} pet breeds.", petBreedRepository.count());
   }

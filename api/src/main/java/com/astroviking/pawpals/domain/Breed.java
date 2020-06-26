@@ -11,14 +11,14 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
-public class PetBreed {
+public class Breed {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String name;
 
-  public PetBreed(String name) {
+  public Breed(String name) {
     this.name = name;
   }
 

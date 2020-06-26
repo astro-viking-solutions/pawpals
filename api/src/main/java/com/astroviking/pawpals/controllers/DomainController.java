@@ -1,7 +1,7 @@
 package com.astroviking.pawpals.controllers;
 
 import com.astroviking.pawpals.domain.GeoState;
-import com.astroviking.pawpals.domain.PetBreed;
+import com.astroviking.pawpals.domain.Breed;
 import com.astroviking.pawpals.repositorties.GeoStateRepository;
 import com.astroviking.pawpals.repositorties.PetBreedRepository;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ public class DomainController {
   }
 
   @GetMapping("/breeds")
-  public List<PetBreed> getPetBreeds() {
+  public List<Breed> getPetBreeds() {
     return petBreedRepository.findAll();
   }
 
