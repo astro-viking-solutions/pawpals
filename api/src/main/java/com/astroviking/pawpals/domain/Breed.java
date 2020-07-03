@@ -3,10 +3,8 @@ package com.astroviking.pawpals.domain;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,9 +15,7 @@ public class Breed {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private String name;
-
-  public Breed(String name) {
-    this.name = name;
-  }
+  @ManyToMany
+  private List<BreedRegistry> breedRegistries;
 
 }

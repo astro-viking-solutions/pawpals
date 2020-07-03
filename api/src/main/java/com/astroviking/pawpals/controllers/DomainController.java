@@ -1,7 +1,9 @@
 package com.astroviking.pawpals.controllers;
 
+import com.astroviking.pawpals.domain.BreedRegistry;
 import com.astroviking.pawpals.domain.GeoState;
 import com.astroviking.pawpals.domain.Breed;
+import com.astroviking.pawpals.repositorties.BreedRegistryRepository;
 import com.astroviking.pawpals.repositorties.GeoStateRepository;
 import com.astroviking.pawpals.repositorties.PetBreedRepository;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,10 +18,20 @@ public class DomainController {
 
   private final PetBreedRepository petBreedRepository;
   private final GeoStateRepository geoStateRepository;
+  private final BreedRegistryRepository breedRegistryRepository;
 
-  public DomainController(PetBreedRepository petBreedRepository, GeoStateRepository geoStateRepository) {
+  public DomainController(
+      PetBreedRepository petBreedRepository,
+      GeoStateRepository geoStateRepository,
+      BreedRegistryRepository breedRegistryRepository) {
     this.petBreedRepository = petBreedRepository;
     this.geoStateRepository = geoStateRepository;
+    this.breedRegistryRepository = breedRegistryRepository;
+  }
+
+  @GetMapping("/registries")
+  public List<BreedRegistry> getBreedRegistries() {
+    return breedRegistryRepository.findAll();
   }
 
   @GetMapping("/breeds")
