@@ -36,8 +36,8 @@ jobs:
 
       - save_cache:
           paths:
-            - ~/api/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+            - ~/.gradle
+          key: v1-dependencies-{{ checksum "api/build.gradle" }}
 
       # run tests!
       - run: gradle test
