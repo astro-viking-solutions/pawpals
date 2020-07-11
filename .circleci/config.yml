@@ -32,7 +32,7 @@ jobs:
             - v1-dependencies-
 
       - run: cd api
-      - run: gradle dependencies
+      - run: gradlew dependencies
 
       - save_cache:
           paths:
@@ -40,4 +40,4 @@ jobs:
           key: v1-dependencies-{{ checksum "api/build.gradle" }}
 
       # run tests!
-      - run: cd api && gradle test
+      - run: cd api && gradlew test
