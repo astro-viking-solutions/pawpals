@@ -10,11 +10,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Optional;
 
+import static com.astroviking.pawpals.controllers.UserProfileController.BASE_URL;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -50,14 +52,14 @@ class UserProfileControllerTest {
 
     when(userProfileService.findById(id)).thenReturn(Optional.empty());
 
-    mockMvc.perform(get("/user/profile")).andExpect(status().isNotFound());
+    mockMvc.perform(get(BASE_URL)).andExpect(status().isNotFound());
   }
 
   @Test
   @WithMockUser(value = "test")
   void createUserProfile() throws Exception {
     mockMvc
-        .perform(post("/user/profile").content(dtoJson()))
+        .perform(post(BASE_URL).content(dtoJson()).contentType(MediaType.APPLICATION_JSON))
         .andExpect(status().isOk());
 
     verify(userProfileService, times(1)).save(any(), any());
@@ -66,7 +68,7 @@ class UserProfileControllerTest {
   @Test
   @WithMockUser(value = "test")
   void updateUserProfile() throws Exception {
-    mockMvc.perform(put("/user/profile").content(dtoJson())).andExpect(status().isOk());
+    mockMvc.perform(put(BASE_URL).content(dtoJson()).contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
   }
 
   private String dtoJson() throws JsonProcessingException {
