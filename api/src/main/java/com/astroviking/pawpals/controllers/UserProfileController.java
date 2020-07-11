@@ -10,8 +10,10 @@ import java.security.Principal;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/user/profile")
+@RequestMapping(UserProfileController.BASE_URL)
 public class UserProfileController {
+
+  public static final String BASE_URL = "/user/profile";
 
   private final UserProfileService userProfileService;
 
