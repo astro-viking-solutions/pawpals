@@ -40,4 +40,5 @@ jobs:
           key: v1-dependencies-{{ checksum "api/build.gradle" }}
 
       # run tests!
+      - run: cd api
       - run: gradle test
