@@ -27,12 +27,12 @@ public class UserProfileController {
   }
 
   @PostMapping
-  public UserProfileDTO createUserProfile(@AuthenticationPrincipal Principal principal, UserProfileDTO dto) {
+  public UserProfileDTO createUserProfile(@AuthenticationPrincipal Principal principal, @RequestBody UserProfileDTO dto) {
     return  userProfileService.save(principal.getName(), dto);
   }
 
   @PutMapping
-  public UserProfileDTO updateUserProfile(@AuthenticationPrincipal Principal principal, UserProfileDTO dto) {
+  public UserProfileDTO updateUserProfile(@AuthenticationPrincipal Principal principal, @RequestBody UserProfileDTO dto) {
     return userProfileService.update(principal.getName(), dto);
   }
 }

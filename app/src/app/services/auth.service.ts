@@ -3,6 +3,7 @@ import {OAuthService, UserInfo} from 'angular-oauth2-oidc';
 import {authCodeFlowConfig} from '../auth/auth-code-flow.config';
 import {AuthUser} from '../domain/auth-user';
 import {Subject} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class AuthService {
 
   authUser$ = this.authUserSource.asObservable();
 
-  constructor(private oauthService: OAuthService) {
+  constructor(private oauthService: OAuthService, private router: Router) {
     console.log('AuthService constructor');
     this.oauthService.configure(authCodeFlowConfig);
     this.oauthService.loadDiscoveryDocumentAndTryLogin().then(_ => {
@@ -41,6 +42,7 @@ export class AuthService {
   login() {
     console.log('START: performLogin');
     this.oauthService.initCodeFlow();
+    this.oauthService.setupAutomaticSilentRefresh();
     console.log('END: performLogin');
   }
 
@@ -49,6 +51,7 @@ export class AuthService {
     this.oauthService.logOut();
     this.loggedIn = false;
     this.authUserSource.next(null);
+    this.router.navigate(['/']).then(r => {});
     console.log('END: performLogout');
   }
 

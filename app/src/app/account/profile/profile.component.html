@@ -1,0 +1,21 @@
+<h1>My Profile</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div fxLayout="row" fxLayoutGap="10px">
+    <mat-form-field >
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="First Name" formControlName="firstName" fxFlex="50">
+    </mat-form-field>
+    <mat-form-field fxFlex="50">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Last Name" formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field fxFlex="100">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <button mat-raised-button type="submit">Create</button>
+  </div>
+</form>
