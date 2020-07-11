@@ -31,8 +31,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: cd api
-      - run: gradlew dependencies
+      - run: cd api && gradlew dependencies
 
       - save_cache:
           paths:
