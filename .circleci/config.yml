@@ -41,3 +41,5 @@ jobs:
 
       # run tests!
       - run: cd api && ./gradlew test
+
+      - run: cd api %% bash <(curl -s https://codecov.io/bash)
