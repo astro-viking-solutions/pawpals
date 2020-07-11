@@ -24,6 +24,8 @@ jobs:
     steps:
       - checkout
 
+      - run: cd api
+
       # Download and cache dependencies
       - restore_cache:
           keys:
